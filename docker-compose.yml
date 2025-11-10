@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    image: banking-portal:latest
+    ports:
+      - "4200:4200"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4200/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+

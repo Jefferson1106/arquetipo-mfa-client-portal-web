@@ -1,0 +1,191 @@
+/* Estilos del componente de botón reutilizable */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-family);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Variantes de botón */
+.btn-primary {
+  background-color: var(--secondary-color, #FFD54F);
+  color: var(--gray-800, #333);
+}
+
+.btn-primary:hover:not(.btn-disabled) {
+  background-color: var(--secondary-light, #FFE082);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: var(--primary-color, #1976D2);
+  color: white;
+}
+
+.btn-secondary:hover:not(.btn-disabled) {
+  background-color: var(--primary-dark, #1565C0);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-success:hover:not(.btn-disabled) {
+  background-color: #45A049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  background-color: #F44336;
+  color: white;
+}
+
+.btn-danger:hover:not(.btn-disabled) {
+  background-color: #E53935;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-warning {
+  background-color: #FF9800;
+  color: white;
+}
+
+.btn-warning:hover:not(.btn-disabled) {
+  background-color: #FB8C00;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-info {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-info:hover:not(.btn-disabled) {
+  background-color: #1E88E5;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo exclusivo botón Banca Web */
+.btn-banca-web {
+  background-color: var(--banca-web-color);
+  color: #14213D; /* contraste oscuro */
+  font-weight: 600;
+  letter-spacing: 0.25px;
+}
+
+.btn-banca-web:hover:not(.btn-disabled) {
+  background-color: #FFDF33;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btn-banca-web:active:not(.btn-disabled) {
+  background-color: #E6C200;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-banca-web:focus-visible {
+  outline: 2px solid #14213D;
+  outline-offset: 2px;
+}
+
+/* Tamaños de botón */
+.btn-small {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  min-height: 32px;
+}
+
+.btn-medium {
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
+  min-height: 40px;
+}
+
+.btn-large {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-lg);
+  min-height: 48px;
+}
+
+/* Estado deshabilitado */
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Ancho completo */
+.btn-full-width {
+  width: 100%;
+}
+
+/* Estado de carga */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+.loading-text {
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Efecto de ripple */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+

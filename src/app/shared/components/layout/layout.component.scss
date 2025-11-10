@@ -1,0 +1,176 @@
+/* Estilos del layout principal del portal bancario */
+/* Implementa el diseño exacto mostrado en la imagen proporcionada */
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--white);
+}
+
+/* Header superior */
+.header {
+  background-color: var(--banca-web-color);
+  border-bottom: 1px solid var(--gray-200);
+  /* Altura aumentada */
+  --header-height: 88px; /* ajustar según diseño deseado */
+  min-height: var(--header-height);
+  padding: var(--spacing-5) var(--spacing-8);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px; /* más ancho */
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--spacing-2);
+}
+
+.app-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+.bank-branding {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bank-icon {
+  font-size: var(--font-size-lg);
+}
+
+.bank-name {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--font-family);
+}
+
+/* Contenido principal */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar de navegación */
+.sidebar {
+  width: 200px;
+  background-color: var(--white);
+  border-right: 1px solid var(--gray-200);
+  padding: var(--spacing-6) 0;
+  flex-shrink: 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.nav-item:last-child {
+  border-bottom: none;
+}
+
+.nav-link {
+  display: block;
+  padding: var(--spacing-4) var(--spacing-6);
+  color: var(--gray-600);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease-in-out;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background-color: var(--gray-50);
+  color: var(--gray-800);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: var(--gray-50);
+  border-left-color: var(--primary-color);
+}
+
+/* Área de contenido */
+.content-area {
+  flex: 1;
+  background-color: var(--gray-50);
+  overflow-y: auto;
+  padding: var(--spacing-4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+  
+  .bank-branding {
+    position: static;
+    transform: none;
+  }
+  
+  .bank-name {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .main-content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .nav-list {
+    display: flex;
+    overflow-x: auto;
+  }
+  
+  .nav-item {
+    border-bottom: none;
+    border-right: 1px solid var(--gray-200);
+    flex-shrink: 0;
+  }
+  
+  .nav-item:last-child {
+    border-right: none;
+  }
+  
+  .nav-link {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .nav-link.active {
+    border-left: none;
+    border-bottom-color: var(--primary-color);
+  }
+}
+

@@ -1,0 +1,10 @@
+/* Estilos del componente principal de la aplicación */
+/* Se mantiene mínimo ya que la mayoría de estilos están en el layout */
+
+:host {
+  display: block;
+  height: 100vh;
+  width: 100%;
+}
+
+

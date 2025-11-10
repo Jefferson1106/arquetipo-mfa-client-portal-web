@@ -1,0 +1,28 @@
+# Angular cache/build
+.angular/
+dist/
+coverage/
+tmp/
+
+# Node
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.sass-cache/
+*.local
+
