@@ -10,8 +10,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
-    "test:jest": "jest --passWithNoTests --runInBand --forceExit",
-    "test:jest:watch": "jest --watch",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "serve:ssr": "node dist/arquetipo-mfa-client-portal-web/server/main.js"
